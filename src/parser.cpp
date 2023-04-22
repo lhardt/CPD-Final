@@ -33,6 +33,7 @@ bool get_next_player(std::ifstream &file, Player & p) {
 	std::string this_line;
 	std::getline(file, this_line);
 
+
 	if (this_line.length() == 0) return false;
 
 	{

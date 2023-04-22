@@ -52,13 +52,19 @@ void read_players_file(Repo & repo) {
 
 	bool success = true;
 	while (file.good() && success) {
+		// std::cout <<" will get the next player \n";
 		Player p;
+
+
 		success = get_next_player(file, p);
+
+		// std::cout <<" got the next player " << p.name << "\n"; return;
 		if (success) {
 			repo.players.insert(p);
 			// std::cout <<" Inserting player <<" << p.positions.size() <<  ">>!\n";
 			repo.player_ids.push_back(p.id);
-			++n_players;
+
+				++n_players;
 		}
 	}
 

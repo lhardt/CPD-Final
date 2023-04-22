@@ -10,7 +10,7 @@ unsigned int str_get_hash(std::string str) {
 		a = (a + str[i]) % ADLER_MOD;
 		b = (b + a) % ADLER_MOD;
 	}
-	// a j� � garantidamente menor que ADLER_MOD
+	// a já é garantidamente menor que ADLER_MOD
 	return (b << 16) | a;
 }
 
@@ -27,8 +27,7 @@ Player::operator std::string() const {
 
 	return final_str;
 }
-Player::Player() : id(0), name(""), positions(), rating(0), rating_count(0) {
-}
+
 std::string Player::get_positions_str() {
 	std::string str= "";
 	if (positions.size() > 0) {
